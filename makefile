@@ -4,10 +4,11 @@ helloworld: helloworld.c
 	gcc -ohelloworld helloworld.c
 
 install: helloworld
-	cp ./helloworld /usr/bin/helloworld
+	mkdir -p $(PREFIX)$(bindir)
+	cp ./helloworld $(PREFIX)$(bindir)/helloworld
 
 uninstall:
-	rm /usr/bin/helloworld
+	rm $(bindir)/helloworld
 
 clean: helloworld
 	rm helloworld
